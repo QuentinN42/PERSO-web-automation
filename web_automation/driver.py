@@ -21,15 +21,15 @@ class Driver(ABC):
         self.driver.quit()
 
     @abstractmethod
-    def main(self, *args, **kwargs) -> None:
+    def main(self, **kwargs) -> None:
         """
         Main method to implement
         """
         ...
 
-    def execute(self, *args, **kwargs):
+    def execute(self, **kwargs):
         self.connect()
         try:
-            self.main(*args, **kwargs)
+            self.main(**kwargs)
         finally:
             self.disconnect()

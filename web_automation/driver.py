@@ -40,7 +40,7 @@ class Driver(ABC):
         """
         ...
     
-    def execute(self, **kwargs):
+    def execute(self, disconnect: bool = True, **kwargs):
         """
         Connect, execute the main script and disconnect.
         """
@@ -48,4 +48,5 @@ class Driver(ABC):
         try:
             self.main(**kwargs)
         finally:
-            self.disconnect()
+            if disconnect:
+                self.disconnect()

@@ -15,7 +15,7 @@ class TempMail(Driver):
     base_url = "https://temp-mail.org/en/"
     
     @property
-    def email(self):
+    def email(self) -> str:
         """
         Return the mail element (can be "Loading" or a valid email).
         """
